@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="view_id">
+    <field name="name">view.name</field>
+    <field name="model">object_name</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        [[[view content: <form>, <tree>, <graph>, ... ]]]
+    </field>
+</record>
+-->
+    <!-- actions opening views on models -->
+
+<act_window id="launch_the_wizard"
+            name="Launch the Wizard"
+            binding_model="trial.session"
+            res_model="trial.wizard"
+            view_mode="form"
+            target="new"/>
+  </data>
+</odoo>

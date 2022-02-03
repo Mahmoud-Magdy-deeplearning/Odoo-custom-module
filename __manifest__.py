@@ -26,11 +26,12 @@
     'data': [
         'security/ir.model.access.csv',
         'views/search.xml',
-        'views/course.xml',
+        'actions/course.xml',
         'views/menu.xml',
-        'views/session.xml',
+        'actions/session.xml',
         'views/tree.xml',
         'views/graph.xml',
+        # 'actions/wizard.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

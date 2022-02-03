@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+
+<!--     actions opening views on models-->
+
+    <record model="ir.actions.act_window" id="trial.action_course">
+      <field name="name">course table</field>
+      <!-- set table name in fr -->
+      <field name="res_model">trial.course</field>
+      <field name="view_mode">tree,form,graph</field>
+      <field name="context" eval="{'search_default_filter_by_name':1}"/>
+
+      <field name="help" type="html">
+        <p>
+          create first trial
+        </p>
+      </field>
+
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="trial.action_server">
+      <field name="name">trial server</field>
+      <field name="model_id" ref="model_trial_course"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+  </data>
+</odoo>

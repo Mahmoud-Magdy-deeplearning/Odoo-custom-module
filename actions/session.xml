@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="view_id">
+    <field name="name">view.name</field>
+    <field name="model">object_name</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        [[[view content: <form>, <tree>, <graph>, ... ]]]
+    </field>
+</record>
+-->
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="trial.session">
+    <!-- set table name in frontend -->
+      <field name="name">session table</field>
+    <!-- set model to view -->
+      <field name="res_model">trial.session</field>
+    <!-- set type pof view (tree or list, form,..)  -->
+      <field name="view_mode">tree,form</field>
+    <!-- if no content view  -->
+      <field name="help" type="html">
+        <p>
+          create first course
+        </p>
+      </field>
+
+    </record>
+
+    <!-- actions -->
+
+  </data>
+</odoo>

@@ -9,4 +9,3 @@ class Session(models.Model):
     name = fields.Char()
     description = fields.Text()
     course_id = fields.Many2one('trial.course', ondelete='set null', string="Course name")
-
