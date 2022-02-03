@@ -1,0 +1,27 @@
+<odoo>
+  <data>
+
+
+
+    <record model="ir.ui.view" id="course_search_view">
+      <field name="name">course_search_view</field>
+      <field name="model">trial.course</field>
+      <field name="arch" type="xml">
+        <search string="Ideas">
+            <field name="name"/>
+            <field name="description" string="Name and description"
+                   filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
+            <field name="value" widget="selection"/>
+
+            <filter name="filter_by_name" string="names"
+                    domain="[('name', '=', 'geo')]"/>
+            <group string="Group By">
+                <filter name="group_by_value" string="value grouping"
+                        context="{'group_by': 'value'}"/>
+            </group>
+        </search>
+
+      </field>
+    </record>
+  </data>
+</odoo>

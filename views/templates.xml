@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="trial.list">
+      <field name="name">trial list</field>
+      <field name="model">trial.course</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+        </tree>
+
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="trial.action_window">
+      <field name="name">trial table</field>
+    <!-- set table name in fr -->
+      <field name="res_model">trial.course</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p name="o_view_nocontent_smiling_face">
+          create first trial
+        </p>
+      </field>
+
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="trial.action_server">
+      <field name="name">trial server</field>
+      <field name="model_id" ref="model_trial_course"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="trial" id="trial.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="trial.menu_1" parent="trial.menu_root"/>
+    <menuitem name="Menu 2" id="trial.menu_2" parent="trial.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="trial.menu_1_list" parent="trial.menu_1"
+              action="trial.action_window"/>
+    <menuitem name="Server to list" id="trial" parent="trial.menu_2"
+              action="trial.action_server"/>
+
+  </data>
+</odoo>

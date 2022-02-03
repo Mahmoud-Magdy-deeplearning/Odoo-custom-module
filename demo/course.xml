@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+          <record id="object0" model="trial.course">
+            <field name="name">Algebra</field>
+            <field name="value">0</field>
+          </record>
+
+          <record id="object1" model="trial.course">
+            <field name="name">Geology</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="trial.course">
+            <field name="name">Arabic</field>
+            <field name="value">20</field>
+          </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,32 @@
+ <odoo>
+  <data>
+      <record model="ir.ui.view" id="course_view_id">
+          <field name="name">course_view_name</field>
+          <field name="model">trial.course</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name" string="Names of all"/>
+              <field name="value"/>
+              <field name="description"/>
+              <field name="session_ids"/>
+            </tree>
+
+          </field>
+    </record>
+
+    <record model="ir.ui.view" id="session_view_id">
+      <field name="name">session_view_name</field>
+      <field name="model">trial.session</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="course_id"/>
+        </tree>
+
+      </field>
+    </record>
+
+
+  </data>
+</odoo>

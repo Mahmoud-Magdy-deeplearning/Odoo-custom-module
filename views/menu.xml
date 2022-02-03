@@ -1,0 +1,21 @@
+<odoo>
+  <data>    <!-- Top menu item -->
+
+    <menuitem name="trial" id="trial.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Models Menu" id="trial.menu_1" parent="trial.menu_root"/>
+    <menuitem name="Server actions" id="trial.menu_2" parent="trial.menu_root"/>
+
+        <!-- actions -->
+
+    <menuitem name="course" id="trial.subMenu_course" parent="trial.menu_1"
+              action="trial.action_course"/>
+    <menuitem name="session" id="trial.subMenu_session" parent="trial.menu_1"
+              action="trial.session"/>
+    <menuitem name="Server to list" id="trial" parent="trial.menu_2"
+              action="trial.action_server"/>
+
+  </data>
+</odoo>
